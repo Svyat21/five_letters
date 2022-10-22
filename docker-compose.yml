@@ -16,8 +16,8 @@ services:
       container_name: app-web
       build: ./
       hostname: app-web
-      expose:
-        - 8000
+      ports:
+      - "8000:8000"
       volumes:
         - .:/app
         - static_data:/app/static
