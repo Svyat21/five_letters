@@ -1,0 +1,246 @@
+/* Обнуление */
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #030316;
+}
+ul,
+ol,
+li{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,
+body{
+    height: 100%;
+    background-color: #FFFFFF;
+    color: #030316;
+    font-family: 'Open Sans', sans-serif;;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+
+/* Глобальные стили */
+.h1_standart{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 33px;
+    margin: 30px 0;
+}
+.p_bold{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 33px;
+}
+
+
+/* Главные контейнеры */
+
+.main_wraper{
+    height: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    min-width: 100%;
+}
+.container_center{
+    position: relative;
+    min-width: 100%;
+    flex: 1 1 auto;
+}
+.container_footer{
+    min-width: 100%;
+}
+.block_content_container{
+    margin-top: 80px;
+    width: 720px;
+}
+@media (max-width:1190px){
+    .main_wraper {
+        max-width: 97%;
+    }
+    .block_content_container{
+        width: 90%;
+    }
+}
+@media (max-width:1000px){
+    .block_content_container{
+        width: 93%;
+    }
+}
+@media (max-width:425px){
+    .main_wraper{
+        width: 90%;
+    }
+}
+
+
+
+
+.container_center__wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.form-wrap{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-wrap p{
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.possible-words{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+.possible-words .p_bold{
+    margin-bottom: 10px;
+}
+.possible-words div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 0 10px;
+}
+.possible-words div p{
+    margin: 5px 5px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    background-color: #c0cad1;
+}
+
+
+/* Форма */
+.form-text-fields{
+    display: flex;
+    width: 300px;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 7px;
+}
+.no-characters{
+    width: 400px;
+}
+/* установим отступ 1rem от нижнего края элемента */
+.text-field {
+  margin-bottom: 1rem;
+  margin: 0 7px;
+}
+/* стили для label */
+.text-field__label {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+/* стили для input */
+.text-field__input {
+  display: block; /* устанавливает блочное отображение */
+  width: 100%; /* занимает всю доступную ширину */
+  height: calc(2.25rem + 2px); /* высота элемента определяется путём сложения  */
+  padding: 0.375rem 0.75rem; /* внутренние поля: сверху и снизу – 0.375rem, а слева и справа – 0.75rem */
+  font-family: inherit; /* чтобы шрифт был такой как у родительского элемента, а не тот который браузер по умолчанию назначает для <input> */
+  font-size: 1rem; /* устанавливает явный размер шрифта, иначе будет браться из стилей браузера для <input> */
+  font-weight: 500; /* задаёт начертание шрифта */
+  line-height: 1.5; /* высота строки (1.5 * размер шрифта) */
+  color: #212529; /* цвет шрифта */
+  background-color: #fff; /* цвет фона */
+  background-clip: padding-box; /* указывает, что фон (фоновое изображение) нужно рисовать только до внешнего края отступа (под границей не выводить) */
+  border: 1px solid #bdbdbd; /* устанавливает границу, у которой: 1px (толщина), solid (тип линии) и #bdbdbd (цвет) */
+  border-radius: 0.25rem; /* радиус скругления углов */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* выполняет изменение значений свойств border-color и box-shadow с анимацией длительностью 0.15 секунд посредством временной функцией ease-in-out */
+}
+.text-field-one-line .text-field__label{
+    font-size: 14px;
+}
+.text-field-one-line .text-field__input{
+    letter-spacing: 7px;
+}
+.text-field__input::placeholder {
+    color: #212529;
+    opacity: 0.4;
+}
+.text-field__input:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+.main-botton{
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #399d40;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.main-botton:hover{
+    background-color: #acacac;
+}
+
+
+.display-none{
+    display: none;
+}
+.greeting{
+    margin: 80px 0;
+}
+.greeting p{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* Футер */
+
+.footer{
+    height: 80px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 1px inset #030316;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;800&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Игра 5 букв</title>
+</head>
+<body>
+    <div class="main_wraper" id="up">
+        <div class="wrapper">
+            <div class="container"></div>
+            <div class="container_center">
+                <div class="container_center__wrap">
+                    <h1 class="display-none">Тинькофф игра 5 букв</h1>
+                    <h1 class="display-none">Слова из 5 букв</h1>
+                    <h1 class="h1_standart">Разгадать слово из 5 букв?</h1>
+                    <p>легко, давай начнем...</p>
+                    <div class="greeting">
+                        <p>Небольшое web-приложение для помощи в разгадки слова из 5-и букв</p>
+                        <p>Нажмите кнопку ниже чтобы начать</p>
+                    </div>
+                    <div class="main-content display-none">
+                        <!-- Возможные варианты слов -->
+                        <div class="possible-words">
+                            <p class="p_bold">Возможно это одно из них?</p>
+                            <div class="values_word">
+                                <p class="value_letter">тест</p>
+                            </div>
+                        </div>
+                        <!-- Форма для букв не входящих в слово -->
+                        <div class="form-wrap">
+                            <p>Буквы, которые не входят в слово</p>
+                            <div class="form-text-fields">
+                                <div class="text-field-one-line no_letters">
+                                    <input class="text-field__input validation" type="text" name="letter_1" placeholder="фыва...">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Форма для букв входящих в слово -->
+                        <div class="form-wrap">
+                            <p>Буквы, которые входят в слово</p>
+                            <div class="form-text-fields">
+                                <div class="text-field-one-line are_letters">
+                                    <input class="text-field__input validation" type="text" name="letter_1" id="letter_1" placeholder="олдж...">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Форма для букв которые точно не находятся на определенной позиции -->
+                        <div class="form-wrap">
+                            <p>Если знаешь, что например на 1-й позиции точно нет буквы <b>И</b>, то заполни поле ниже (тут можно вводить более 1 буквы)</p>
+                            <div class="form-text-fields no-characters not_in_place">
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_1">1</label>
+                                    <input class="text-field__input validation validate_3" type="text" name="letter_1" id="letter_1" placeholder="С">
+                                </div>
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_2">2</label>
+                                    <input class="text-field__input validation validate_3" type="text" name="letter_2" id="letter_2" placeholder="Л">
+                                </div>
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_3">3</label>
+                                    <input class="text-field__input validation validate_3" type="text" name="letter_3" id="letter_3" placeholder="О">
+                                </div>
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_4">4</label>
+                                    <input class="text-field__input validation validate_3" type="text" name="letter_4" id="letter_4" placeholder="В">
+                                </div>
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_5">5</label>
+                                    <input class="text-field__input validation validate_3" type="text" name="letter_5" id="letter_5" placeholder="О">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Форма для букв которые точно находятся на определенной позиции -->
+                        <div class="form-wrap">
+                            <p>Если знаешь букву которая должна стоять на нужном месте, то заполни поле ниже</p>
+                            <div class="form-text-fields in_place">
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_1">1</label>
+                                    <input class="text-field__input validation validate_1" type="text" name="letter_1" id="letter_1" placeholder="С">
+                                </div>
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_2">2</label>
+                                    <input class="text-field__input validation validate_1" type="text" name="letter_2" id="letter_2" placeholder="Л">
+                                </div>
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_3">3</label>
+                                    <input class="text-field__input validation validate_1" type="text" name="letter_3" id="letter_3" placeholder="О">
+                                </div>
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_4">4</label>
+                                    <input class="text-field__input validation validate_1" type="text" name="letter_4" id="letter_4" placeholder="В">
+                                </div>
+                                <div class="text-field">
+                                    <label class="text-field__label" for="letter_5">5</label>
+                                    <input class="text-field__input validation validate_1" type="text" name="letter_5" id="letter_5" placeholder="О">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="main-botton" id="create-game">Отгадать слово</button>
+                </div>
+            </div>
+            <div class="container_footer">
+                <footer class="footer">
+                    <p>Игра пять букв ©</p>
+                    <a class="tel" href="email:sursvyat@gmail.com">sursvyat@gmail.com</a>
+                </footer>
+            </div> 
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
