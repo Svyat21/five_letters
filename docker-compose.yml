@@ -1,5 +1,16 @@
 version: '3'
 services:
+  app-web:
+      container_name: app-web
+      build: ./
+      hostname: app-web
+      ports:
+      - "8000:8000"
+      volumes:
+        - .:/app
+        - static_data:/app/static
+      restart: on-failure
+  
   nginx:
     container_name: nginx
     image: nginx:latest
@@ -11,17 +22,6 @@ services:
       - app-web
     ports:
       - "80:80"
-
-  app-web:
-      container_name: app-web
-      build: ./
-      hostname: app-web
-      ports:
-      - "8000:8000"
-      volumes:
-        - .:/app
-        - static_data:/app/static
-      restart: on-failure
 
 volumes:
   static_data:
