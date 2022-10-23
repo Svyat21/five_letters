@@ -18,6 +18,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./configs:/etc/nginx/conf.d:ro
       - static_data:/static
+      - /etc/letsencrypt/live/fiveletters.ru:/etc/ssl/certs
     depends_on:
       - app-web
     ports:
