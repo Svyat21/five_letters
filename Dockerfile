@@ -9,7 +9,8 @@ COPY entrypoint.sh entrypoint.sh
 COPY requirements.txt requirements.txt
 
 RUN  pip install --upgrade pip \
-     && pip install -r requirements.txt
+     && pip install -r requirements.txt \
+	&& pip install uvicorn[standard]
 
 COPY . .
 
