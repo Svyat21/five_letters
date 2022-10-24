@@ -25,7 +25,7 @@ for (let input of inputs_len_1) {
 
 
 // получение и отправка данных
-const ws = new WebSocket(url='ws://fiveletters.ru/ws')
+const ws = new WebSocket(url='wss://fiveletters.ru/ws')
 
 function getValueDataByElementChild(parent_inputs) {
     let data = []
