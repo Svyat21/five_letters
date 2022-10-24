@@ -19,6 +19,7 @@ services:
       - ./configs:/etc/nginx/conf.d:ro
       - static_data:/static
       - ./certs:/etc/ssl/certs
+    command: rm /etc/nginx/conf.d/default.conf
     depends_on:
       - app-web
     ports:
